@@ -83,9 +83,8 @@ def find_min(missing, missed_dict):
                   
 
 def min_additions(destinations, routes, starting):
-    # first find whats not in the routes at all
-    # First find all heads
     graph = Graph(routes)
+    # first find whats not in the routes at all    
     minimum = [[starting, missed] for missed in destinations if missed not in graph.heads and missed not in graph.all_children]
     for item1, item2 in minimum:
         destinations.remove(item2)
